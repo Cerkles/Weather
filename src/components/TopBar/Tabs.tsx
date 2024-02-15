@@ -1,21 +1,22 @@
 "use client"
-import { useState } from "react"
+import { useStore } from "@/store/store"
 
 export function Tabs() {
-    const [selectedTab, setSelectedTab] = useState(0)
     const tabs = ["Overview", "Dashboard"]
+    const tab = useStore((state) => state.tab)
+    const selectTab = useStore((state)=> state.selectTab)
 
     return (
         <div className={styles.root}>
             {tabs.map((title, index) => {
-                const underline = selectedTab === index ?
+                const underline = tab === index ?
                     "border-b-2 border-white"
                     : "border-b-2 border-transparent"
 
                 return (
                     <button key={`button_${index}`}
                         className={`transform ease-in-out duration-500 ${underline}`}
-                        onClick={() => setSelectedTab(index)}
+                        onClick={() => selectTab(index)}
                     >
                         {title}
                     </button>
