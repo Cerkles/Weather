@@ -1,12 +1,11 @@
 "use client"
-import { useState } from "react"
+import { useStore } from "@/store/store"
 import { FaCloud } from "react-icons/fa";
 import { MdDashboard } from "react-icons/md";
 
-
-
 export function Tabs() {
-    const [selectedTab, setSelectedTab] = useState(0)
+    const selectedTab = useStore((state) => state.tab)
+    const selectTab = useStore((state) => state.selectTab)
     const tabs = [
         { icon: <FaCloud />, title: "Overview" },
         { icon: <MdDashboard />, title: "Dashboard" }
@@ -22,7 +21,7 @@ export function Tabs() {
                 return (
                     <button key={`button_${index}`}
                         className={`${styles.tab} ${underline}`}
-                        onClick={() => setSelectedTab(index)}
+                        onClick={() => selectTab(index)}
                     >
                         <div>{tab.icon}</div>
                         <p>{tab.title}</p>
