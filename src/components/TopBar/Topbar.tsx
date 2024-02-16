@@ -13,6 +13,5 @@ export function Topbar() {
 }
 
 const styles = {
-    root: "bg-sky-500 border-b-4 border-zinc-300 flex justify-between py-4 px-6 cursor-default",
-    text: "text-white text-lg font-medium text-center"
-}
+    root: "bg-gradient-to-b from-sky-500 to-sky-600 border-b-4 border-zinc-300 flex justify-between py-4 px-6 cursor-default",
+} 
