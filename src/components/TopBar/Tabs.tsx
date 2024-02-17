@@ -1,5 +1,6 @@
 "use client"
 import { useStore } from "@/store/store"
+import Link from "next/link"
 import { FaCloud } from "react-icons/fa";
 import { MdDashboard } from "react-icons/md";
 
@@ -7,8 +8,8 @@ export function Tabs() {
     const selectedTab = useStore((state) => state.tab)
     const selectTab = useStore((state) => state.selectTab)
     const tabs = [
-        { icon: <FaCloud />, title: "Overview" },
-        { icon: <MdDashboard />, title: "Dashboard" }
+        { icon: <FaCloud />, title: "Overview", link: "/overview" },
+        { icon: <MdDashboard />, title: "Dashboard", link: "/dashboard" }
     ]
 
     return (
@@ -19,13 +20,14 @@ export function Tabs() {
                     : "border-b-2 border-transparent"
 
                 return (
-                    <button key={`button_${index}`}
+                    <Link key={`button_${index}`}
                         className={`${styles.tab} ${underline}`}
                         onClick={() => selectTab(index)}
+                        href={tab.link}
                     >
                         <div>{tab.icon}</div>
                         <p>{tab.title}</p>
-                    </button>
+                    </Link>
                 )
             })}
         </div>

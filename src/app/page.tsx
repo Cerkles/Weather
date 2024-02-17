@@ -1,17 +1,19 @@
 "use client"
+import { useEffect } from "react"
+import { useRouter } from "next/router"
 import { Topbar } from "@/components/TopBar/Topbar"
-import { useStore } from "@/store/store"
 
 export default function Home() {
-  const tab = useStore((state) => state.tab)
+  const router = useRouter()
+    
+  useEffect(() => {
+    router.push("/overview")
+  }, [router])
+  
 
   return (
     <>
       <Topbar />
-      {tab === 0 ?
-        (<div>Overview</div>) 
-        : 
-        (<div>Dashboard</div>)}
     </>
   )
 }
