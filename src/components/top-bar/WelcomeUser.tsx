@@ -11,6 +11,6 @@ export function WelcomeUser () {
 
 const styles = {
     root: "flex gap-2 items-center",
-    letter: "flex justify-center items-center bg-zinc-600 rounded-full h-6 w-6 cursor-pointer transition ease-in-out duration-500 hover:bg-yellow-300 hover:scale-125",
+    letter: "flex justify-center items-center bg-slate-300 rounded-full h-6 w-6 cursor-pointer transition ease-in-out duration-500 hover:bg-yellow-300 hover:scale-125",
     text: "text-white text-lg font-medium",
 }

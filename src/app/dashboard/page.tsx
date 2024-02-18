@@ -1,4 +1,4 @@
-import { Topbar } from "@/components/TopBar/Topbar"
+import { Topbar } from "@/components/top-bar/Topbar"
 
 export default function Dashboard () {
 

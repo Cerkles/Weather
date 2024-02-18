@@ -1,13 +1,13 @@
 "use client"
 import { useEffect } from "react"
-import { useRouter } from "next/router"
-import { Topbar } from "@/components/TopBar/Topbar"
+import { useRouter } from "next/navigation"
+import { Topbar } from "@/components/top-bar/Topbar"
 
 export default function Home() {
   const router = useRouter()
     
   useEffect(() => {
-    router.push("/overview")
+      router.push("/overview")
   }, [router])
   
 
