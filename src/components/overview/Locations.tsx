@@ -1,15 +1,36 @@
 "use client"
+import { useEffect } from "react";
 import { guestLocations } from "@/guest-data/guest-locations"
 import { FiCloud } from "react-icons/fi";
 import { useOverviewStore } from "@/store/overview-store";
+import { getCurrentData } from "@/api/requests";
 
 export function Locations() {
     const selectedLocation = useOverviewStore((state) => state.location)
     const selectLocation = useOverviewStore((state) => state.selectLocation)
+    const currentData = useOverviewStore((state) => state.data)
+    const setCurrentData = useOverviewStore((state) => state.setData)
+
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          const promises = guestLocations.map(location =>
+            getCurrentData(location.latitude, location.longitude)
+          );
+          const data = await Promise.all(promises);
+          setCurrentData(data);
+        } catch (error) {
+          console.error('Error fetching weather data:', error);
+        }
+      };
+  
+      fetchData();
+    }, []);
 
     return (
         <div className={styles.root}>
             {guestLocations.map((location, index) => {
+
                 return (
                     <button key={`location_${index}`}
                         className={`${styles.location} ${styles.button}

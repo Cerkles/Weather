@@ -1,7 +1,10 @@
+"use client"
 import { Topbar } from "@/components/top-bar/Topbar";
 import { Locations } from "@/components/overview/Locations";
+import { useOverviewStore } from "@/store/overview-store";
 
 export default function Overview() {
+    const data = useOverviewStore((state) => state.data)
 
     return (
         <>
@@ -9,7 +12,7 @@ export default function Overview() {
             <Locations />
             <div className={styles.content}>
                 <div className={styles.container}>
-                    Overview
+
                 </div>
 
             </div>
@@ -19,5 +22,5 @@ export default function Overview() {
 
 const styles = {
     content: "flex items-center justify-center",
-    container: "h-full w-full bg-white mb-6 mx-6 rounded-lg border-b-2 border-slate-200 drop-shadow-lg",
+    container: "h-full w-full bg-slate-100 mb-6 mx-6 rounded-lg border-b-2 border-slate-200 drop-shadow-lg",
 }
