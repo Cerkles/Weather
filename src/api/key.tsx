@@ -1,1 +1,1 @@
- export const key = "test"
+ export const key = "test2"
