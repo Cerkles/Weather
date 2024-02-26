@@ -7,3 +7,10 @@ export async function getCurrentData(latitude:string, longitude:string) {
     const data = await response.json()
     return data
 }
+
+export async function getSearchLocation(location: string) {
+    const call = `${url}search.json?key=${key}&q=${location}`
+    const response = await fetch(call)
+    const data = await response.json()
+    return data
+}

@@ -4,6 +4,7 @@ import { guestLocations } from "@/guest-data/guest-locations"
 import { FiCloud } from "react-icons/fi";
 import { useOverviewStore } from "@/store/overview-store";
 import { getCurrentData } from "@/api/requests";
+import { SearchBar } from "./SearchBar";
 
 export function Locations() {
     const selectedLocation = useOverviewStore((state) => state.location)
@@ -40,12 +41,13 @@ export function Locations() {
                         <p className={styles.text}>{location.city}</p>
                         <div className={`${styles.icon} 
                         ${selectedLocation === index ? styles.selectedIcon : styles.otherIcon}`}>
-                            <FiCloud />
+                            <img src={currentData[index]?.current.condition.icon}/>
                         </div>
 
                     </button>
                 )
             })}
+            <SearchBar/>
         </div>
     )
 
@@ -56,7 +58,7 @@ const styles = {
     location: "flex items-center mx-2 my-4 pl-1 rounded-full",
     button: "transition ease-in-out duration-300 border-b-2 hover:scale-110 drop-shadow-md",
     text: "px-2 text-white",
-    icon: "flex items-center p-1 h-full bg-white border-2 rounded-full transition ease-in-out duration-300",
+    icon: "flex items-center p-1 w-[2rem] bg-white border-2 rounded-full transition ease-in-out duration-300",
     selected: "bg-sky-500 border-sky-600",
     selectedIcon: "text-sky-500 border-sky-500",
     other: "bg-slate-300 border-slate-400",
