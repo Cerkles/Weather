@@ -21,6 +21,8 @@ export const GeneralInfo = ({ data }: any) => {
             <p>is_day {data?.current.is_day}</p>
             <p>humidity {data?.current.humidity}</p>
             <p>visibility {data?.current.vis_miles}</p>
+            <p>cloud {data?.current.cloud}</p>
+            <p>pressure_in {data?.current.pressure_in}</p>
         </div>
     )
 }

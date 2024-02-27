@@ -10,6 +10,7 @@ import { AirQuality } from "@/components/overview/AirQuality";
 import { Wind } from "@/components/overview/Wind";
 import { Precipitation } from "@/components/overview/Precipitation";
 import { Ultraviolet } from "@/components/overview/Ultraviolet";
+import { Astrological } from "@/components/overview/Astrological";
 import { getForecastData } from "@/api/requests";
 import { useOverviewStore } from "@/store/overview-store";
 
@@ -50,10 +51,10 @@ export default function Overview() {
                                 <div className={styles.rowSpanThree}>
                                     <GeneralInfo data={forecastData[selectedLocation]} />
                                 </div>
-                                <div className={styles.colSpanTwo}>
+                                <div className={styles.colSpanThree}>
                                     <HourlyForecast data={forecastData[selectedLocation]} />
                                 </div>
-                                <div className={styles.autoSpan}>
+                                <div className={styles.colSpanTwo}>
                                     <AirQuality data={forecastData[selectedLocation]?.current?.air_quality} />
                                 </div>
                                 <div className={styles.autoSpan}>
@@ -64,6 +65,9 @@ export default function Overview() {
                                 </div>
                                 <div className={styles.autoSpan}>
                                     <Ultraviolet data={forecastData[selectedLocation]?.current} />
+                                </div>
+                                <div className={styles.autoSpan}>
+                                    <Astrological data={forecastData[selectedLocation]} />
                                 </div>
                             </div>
                         </div>
@@ -78,6 +82,7 @@ const styles = {
     content: "flex items-center justify-center",
     container: "h-[85vh] w-full grid grid-flow-col gap-3 bg-slate-100 mb-6 mx-6 p-2 rounded-lg border-b-2 border-slate-200 drop-shadow-lg",
     rowSpanThree: "row-span-3 bg-white rounded-lg drop-shadow-md border-b-2 border-slate-200",
+    colSpanThree: "col-span-3 bg-white rounded-lg drop-shadow-md border-b-2 border-slate-200",
     colSpanTwo: "col-span-2 bg-white rounded-lg drop-shadow-md border-b-2 border-slate-200",
     autoSpan: "bg-white rounded-lg drop-shadow-md border-b-2 border-slate-200"
 }
