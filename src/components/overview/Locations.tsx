@@ -6,7 +6,7 @@ import { SearchBar } from "./SearchBar";
 export function Locations() {
   const selectedLocation = useOverviewStore((state) => state.location)
   const selectLocation = useOverviewStore((state) => state.selectLocation)
-  const forecastData = useOverviewStore((state) => state.data)
+  const forecastData = useOverviewStore((state) => state.forecastData)
 
   return (
     <div className={styles.root}>

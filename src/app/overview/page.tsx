@@ -17,8 +17,8 @@ import { useOverviewStore } from "@/store/overview-store";
 export default function Overview() {
     const [loading, setLoading] = useState(true)
     const selectedLocation = useOverviewStore((state) => state.location)
-    const forecastData = useOverviewStore((state) => state.data)
-    const setForecastData = useOverviewStore((state) => state.setData)
+    const forecastData = useOverviewStore((state) => state.forecastData)
+    const setForecastData = useOverviewStore((state) => state.setForecastData)
 
     useEffect(() => {
         const fetchData = async () => {

@@ -1,4 +1,4 @@
-type AirQualityReturn = {
+export type AirQualityReturn = {
     co: number;
     "gb-defra-index": number;
     no2: number;
@@ -9,13 +9,13 @@ type AirQualityReturn = {
     "us-epa-index": number;
 }
 
-type ConditionReturn = {
+export type ConditionReturn = {
     code: number;
     icon: string;
     text: string;
 }
 
-type CurrentReturn = {
+export type CurrentReturn = {
     air_quality: AirQualityReturn;
     cloud: number;
     condition: ConditionReturn;
@@ -41,7 +41,7 @@ type CurrentReturn = {
     wind_mph: number;
 }
 
-type LocationReturn = {
+export type LocationReturn = {
     country: string;
     lat: number;
     localtime: string;
