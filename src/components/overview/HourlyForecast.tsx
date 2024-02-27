@@ -1,6 +1,7 @@
 import { WiTime2 } from "react-icons/wi";
+import { HourReturn } from "@/types/forecast-weather";
 
-export const HourlyForecast = ({ data }: any) => {
+export const HourlyForecast: React.FC<{ data: HourReturn }> = ({ data }) => {
 
     return (
         <div className={styles.root}>

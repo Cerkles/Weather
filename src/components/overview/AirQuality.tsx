@@ -1,6 +1,7 @@
 import { WiDust } from "react-icons/wi";
+import { AirQualityReturn } from "@/types/current-weather";
 
-export const AirQuality = ({ data }: any) => {
+export const AirQuality: React.FC<{ data: AirQualityReturn }> = ({ data }) => {
 
     return (
         <div className={styles.root}>

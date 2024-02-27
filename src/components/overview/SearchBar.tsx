@@ -3,7 +3,7 @@ import { getSearchLocation } from "@/api/requests";
 import { useEffect, useState, useRef } from "react";
 import { useOutsideClick } from "@/utils/overview-utils/location-utils";
 
-export function SearchBar() {
+export const SearchBar = () => {
     const [searchInput, setSearchInput] = useState("")
     const [locationSearch, setLocationSearch] = useState<LocationResults[]>([])
     const [searchBarSelected, setSearchBarSelected] = useState(false)

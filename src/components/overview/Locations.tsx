@@ -3,7 +3,7 @@ import { guestLocations } from "@/guest-data/guest-locations"
 import { useOverviewStore } from "@/store/overview-store";
 import { SearchBar } from "./SearchBar";
 
-export function Locations() {
+export const Locations = () => {
   const selectedLocation = useOverviewStore((state) => state.location)
   const selectLocation = useOverviewStore((state) => state.selectLocation)
   const forecastData = useOverviewStore((state) => state.forecastData)

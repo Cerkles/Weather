@@ -1,6 +1,7 @@
 import { WiStrongWind } from "react-icons/wi";
+import { ForecastWeather } from "@/types/forecast-weather";
 
-export const Wind = ({ data }: any) => {
+export const Wind: React.FC<{ data: ForecastWeather }> = ({ data }) => {
 
     return (
         <div className={styles.root}>
@@ -10,10 +11,10 @@ export const Wind = ({ data }: any) => {
                 </div>
                 <h1>Wind</h1>
             </div>
-            <p>gust_mph {data?.gust_mph}</p>
-            <p>wind degree {data?.wind_degree}</p>
-            <p>wind direction {data?.wind_dir}</p>
-            <p>wind_mph {data?.wind_mph}</p>
+            <p>gust_mph {data?.current?.gust_mph}</p>
+            <p>wind degree {data?.current?.wind_degree}</p>
+            <p>wind direction {data?.current?.wind_dir}</p>
+            <p>wind_mph {data?.current?.wind_mph}</p>
         </div>
     )
 }

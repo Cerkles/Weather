@@ -1,6 +1,7 @@
 import { FaEarthAmericas } from "react-icons/fa6";
+import { ForecastWeather } from "@/types/forecast-weather";
 
-export const GeneralInfo = ({ data }: any) => {
+export const GeneralInfo: React.FC<{ data: ForecastWeather }> = ({ data }) => {
 
     console.log(data)
 
@@ -10,12 +11,11 @@ export const GeneralInfo = ({ data }: any) => {
                 <div className={styles.icon}>
                     <FaEarthAmericas />
                 </div>
-                <h1>General Information</h1>
+                <h1>General</h1>
             </div>
-            <p>name {data?.location.name}</p>
-            <p>region {data?.location.region}</p>
-            <p>country {data?.location.country}</p>
-            <p>time {data?.location.localtime}</p>
+            <h1>{data?.location.name}, {data?.location.region}</h1>
+            <h1>{data?.location.country}</h1>
+            <p>{data?.location.localtime}</p>
             <p>temp_f {data?.current.temp_f}</p>
             <p>feelslike_f {data?.current.feelslike_f}</p>
             <p>is_day {data?.current.is_day}</p>

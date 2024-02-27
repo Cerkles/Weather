@@ -22,6 +22,7 @@ export type CurrentReturn = {
     feelslike_c: number;
     feelslike_f: number;
     gust_kph: number;
+    gust_mph: number;
     humidity: number;
     is_day: number;
     last_updated: string;
