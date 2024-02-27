@@ -4,13 +4,13 @@ import { useRouter } from "next/navigation"
 import { Topbar } from "@/components/top-bar/Topbar"
 import { OverviewSkeleton } from "@/components/skeletons/overview/OverviewSkeleton"
 
-export default function Home() {
+export const Home = () => {
   const router = useRouter()
-    
+
   useEffect(() => {
-      router.push("/overview")
+    router.push("/overview")
   }, [router])
-  
+
 
   return (
     <>

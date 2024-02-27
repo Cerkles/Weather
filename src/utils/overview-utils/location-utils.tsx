@@ -1,6 +1,6 @@
 import { useEffect, RefObject } from 'react';
 
-export function useOutsideClick(ref: RefObject<HTMLElement>, handler: (event: MouseEvent) => void): void {
+export const useOutsideClick = (ref: RefObject<HTMLElement>, handler: (event: MouseEvent) => void): void => {
     useEffect(() => {
         const listener = (event: MouseEvent): void => {
             if (!ref.current || ref.current.contains(event.target as Node)) {
@@ -16,4 +16,3 @@ export function useOutsideClick(ref: RefObject<HTMLElement>, handler: (event: Mo
         };
     }, [ref, handler]);
 }
-

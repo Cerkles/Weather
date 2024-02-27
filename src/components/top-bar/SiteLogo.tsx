@@ -1,11 +1,11 @@
 import { RiCloudFill } from "react-icons/ri";
 
-export function SiteLogo() {
+export const SiteLogo = () => {
 
     return (
         <div className={styles.root}>
             <div className={styles.cloud}>
-            <RiCloudFill />
+                <RiCloudFill />
             </div>
             <p className={styles.text}>{"How's the Weather?"}</p>
         </div>

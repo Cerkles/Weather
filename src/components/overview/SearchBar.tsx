@@ -9,9 +9,8 @@ export function SearchBar() {
     const [searchBarSelected, setSearchBarSelected] = useState(false)
     const ref = useRef<HTMLDivElement>(null);
 
-
     useEffect(() => {
-        getSearchLocation(searchInput).then(res => setLocationSearch(res))
+        searchInput.length > 0 && getSearchLocation(searchInput).then(res => setLocationSearch(res))
     }, [searchInput])
 
     useOutsideClick(ref, () => setSearchBarSelected(false));
@@ -23,17 +22,17 @@ export function SearchBar() {
 
     return (
         <div ref={ref} className={styles.root}>
-            <input 
-            id="location_search"
-            value={searchInput}
-            className={styles.searchInput}
-            placeholder="Search"
-            onChange={(e) => handleSearchInput(e.target.value, true)}/>
+            <input
+                id="location_search"
+                value={searchInput}
+                className={styles.searchInput}
+                placeholder="Search"
+                onChange={(e) => handleSearchInput(e.target.value, true)} />
             <div className={styles.searchResultsContainer}>
-                {locationSearch.length > 0 && searchBarSelected && locationSearch.map((results) => 
-                <div className={styles.searchResults} onClick={() => handleSearchInput(results.name, false)}>
-                    {results.name}
-                </div>
+                {locationSearch.length > 0 && searchBarSelected && locationSearch.map((results) =>
+                    <div key={results.name} className={styles.searchResults} onClick={() => handleSearchInput(results.name, false)}>
+                        {results.name}, {results.country}
+                    </div>
                 )}
             </div>
         </div>

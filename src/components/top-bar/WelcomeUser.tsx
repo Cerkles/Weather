@@ -1,5 +1,5 @@
 
-export function WelcomeUser () {
+export const WelcomeUser = () => {
 
     return (
         <div className={styles.root}>

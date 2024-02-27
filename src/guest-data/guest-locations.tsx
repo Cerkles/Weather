@@ -9,12 +9,7 @@ export const guestLocations: Location[] = [
     {
         city: "Raleigh",
         latitude: "35.77",
-        longitude: "-78.63"
-    },
-    {
-        city: "Wilmington",
-        latitude: "34.21",
-        longitude: "-77.88"
+        longitude: "-78.64"
     },
     {
         city: "Tokyo",
@@ -22,18 +17,28 @@ export const guestLocations: Location[] = [
         longitude: "139.83"
     },
     {
-        city: "Delhi",
-        latitude: "28.70",
-        longitude: "77.1"
+        city: "Yakutsk",
+        latitude: "62.03",
+        longitude: "129.73"
     },
     {
-        city: "Shanghai",
-        latitude: "31.23",
-        longitude: "121.47"
+        city: "Dallol",
+        latitude: "14.2",
+        longitude: "40.23"
+    },
+    {        
+        city: "Mawsynram",
+        latitude: "25.3",
+        longitude: "91.58"
     },
     {
-        city: "São Paulo",
-        latitude: "-23.55",
-        longitude: "-46.62"
+        city: "Kashgar",
+        latitude: "39.47",
+        longitude: "75.99"
     },
+    {
+        city: "Cuzco",
+        latitude: "-13.52",
+        longitude: "-71.98"
+    }
 ]

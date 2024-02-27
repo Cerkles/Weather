@@ -2,7 +2,7 @@ import { SiteLogo } from "./SiteLogo"
 import { Tabs } from "./Tabs"
 import { WelcomeUser } from "./WelcomeUser"
 
-export function Topbar() {
+export const Topbar = () => {
     return (
         <div className={styles.root}>
             <SiteLogo />

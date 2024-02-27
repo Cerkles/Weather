@@ -4,7 +4,7 @@ import Link from "next/link"
 import { FaCloud } from "react-icons/fa";
 import { MdDashboard } from "react-icons/md";
 
-export function Tabs() {
+export const Tabs = () => {
     const selectedTab = useStore((state) => state.tab)
     const selectTab = useStore((state) => state.selectTab)
     const tabs = [
