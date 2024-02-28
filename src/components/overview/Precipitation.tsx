@@ -1,6 +1,7 @@
 import { WiRaindrop } from "react-icons/wi";
+import { ForecastWeather } from "@/types/forecast-weather";
 
-export const Precipitation = ({ data }: any) => {
+export const Precipitation: React.FC<{ data: ForecastWeather}> = ({ data }) => {
 
     return (
         <div className={styles.root}>
@@ -10,7 +11,7 @@ export const Precipitation = ({ data }: any) => {
                 </div>
                 <h1>Precipitation</h1>
             </div>
-            <p>precip {data?.precip_in}</p>
+            <p>precip {data?.current?.precip_in}</p>
         </div>
     )
 }

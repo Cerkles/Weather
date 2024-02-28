@@ -1,8 +1,7 @@
 import { GiMoon } from "react-icons/gi";
+import { AstroReturn } from "@/types/forecast-weather";
 
-export const Astrological = ({data} : any) => {
-
-    console.log(data)
+export const Astro: React.FC<{ data: AstroReturn }> = ({ data }) => {
 
     return (
         <div className={styles.root}>
@@ -10,8 +9,9 @@ export const Astrological = ({data} : any) => {
                 <div className={styles.icon}>
             <GiMoon />
                 </div>
-                <h1>Astrological</h1>
+                <h1>Celestial</h1>
             </div>
+            <p>{data.is_moon_up}</p>
         </div>
     )
 }

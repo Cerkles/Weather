@@ -9,7 +9,7 @@ type Alerts = {
     alert: Alert;
 }
 
-type AstroReturn = {
+export type AstroReturn = {
     is_moon_up: number;
     is_sun_up: number;
     moon_illumination: number;
@@ -44,7 +44,7 @@ type DayReturn = {
     uv: number;
 }
 
-type HourReturn = {
+export type HourReturn = {
     air_quality: AirQualityReturn;
     chance_of_rain: number;
     chance_of_snow: number;
