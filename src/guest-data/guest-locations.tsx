@@ -1,5 +1,5 @@
 
-type Location = {
+export type Location = {
     city: string;
     latitude: string;
     longitude: string;
