@@ -3,8 +3,6 @@ import { ForecastWeather } from "@/types/forecast-weather";
 
 export const GeneralInfo: React.FC<{ data: ForecastWeather }> = ({ data }) => {
 
-    console.log(data)
-
     return (
         <div className={styles.root}>
             <div className={styles.header}>

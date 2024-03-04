@@ -19,11 +19,12 @@ export default function Overview() {
     const selectedLocation = useOverviewStore((state) => state.location)
     const forecastData = useOverviewStore((state) => state.forecastData)
     const setForecastData = useOverviewStore((state) => state.setForecastData)
+    const locations = useOverviewStore((state) => state.locations)
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const promises = guestLocations.map(location =>
+                const promises = locations.map(location =>
                     getForecastData(location.latitude, location.longitude)
                 );
                 const data = await Promise.all(promises);
@@ -35,7 +36,7 @@ export default function Overview() {
         };
 
         fetchData();
-    }, []);
+    }, [locations]);
 
     return (
         <>
@@ -80,7 +81,7 @@ export default function Overview() {
 
 const styles = {
     content: "flex items-center justify-center",
-    container: "h-[85vh] w-full grid grid-flow-col grid-cols-4 grid-rows-3 gap-2 bg-slate-100 mb-6 mx-6 p-2 rounded-lg border-b-2 border-slate-200 drop-shadow-lg",
+    container: "h-[83vh] w-full grid grid-flow-col grid-cols-4 grid-rows-3 gap-2 bg-slate-100 mb-6 mx-6 p-2 rounded-lg border-b-2 border-slate-200 drop-shadow-lg",
     card: "bg-white rounded-lg drop-shadow-md border-b-2 border-slate-200",
     rowSpanThree: "row-span-3",
     colSpanThree: "col-span-3",

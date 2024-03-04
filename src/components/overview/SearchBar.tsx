@@ -23,13 +23,12 @@ export const SearchBar = () => {
         setSearchBarSelected(selected)
     }
 
-    const addLocation = (results) => {
+    const addLocation = (results: LocationResults) => {
         const newLocation = {
             city: results.name,
-            latitude: results.lat,
-            longitude: results.lon
+            latitude: String(results.lat),
+            longitude: String(results.lon)
         };
-
         setLocations([...locations, newLocation]);
     };
 

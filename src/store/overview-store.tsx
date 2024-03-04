@@ -15,7 +15,7 @@ type OverviewStore = {
     editMode: boolean;
     setEditMode: (change: boolean) => void;
     locations: Location[];
-    setLocations: (currentLocations: Location) => void;
+    setLocations: (currentLocations: Location[]) => void;
 }
 
 export const useOverviewStore = create<OverviewStore>((set) => ({
