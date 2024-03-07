@@ -41,7 +41,8 @@ export const Locations = () => {
             <p className={styles.text}>{location.city}</p>
             <div className={`${styles.icon} 
                         ${selectedLocation === index ? styles.selectedIcon : styles.otherIcon}`}>
-              <img src={forecastData[index]?.current?.condition.icon} />
+              <img src={forecastData[index]?.current?.condition.icon} 
+              alt={`${forecastData[index]?.current?.condition.text}`}/>
             </div>
           </button>)}
       </div>
