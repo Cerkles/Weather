@@ -1,10 +1,9 @@
 "use client"
 import { useState, useEffect } from "react";
-import { guestLocations } from "@/guest-data/guest-locations";
 import { Topbar } from "@/components/top-bar/Topbar";
 import { OverviewSkeleton } from "@/components/skeletons/overview/OverviewSkeleton";
 import { Locations } from "@/components/overview/Locations";
-import { GeneralInfo } from "@/components/overview/GeneralInfo";
+import { GeneralInfo } from "@/components/overview/general-info/GeneralInfo";
 import { HourlyForecast } from "@/components/overview/HourlyForecast";
 import { AirQuality } from "@/components/overview/AirQuality";
 import { Wind } from "@/components/overview/Wind";
